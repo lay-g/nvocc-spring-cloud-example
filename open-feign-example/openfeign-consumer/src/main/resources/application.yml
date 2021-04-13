@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: openfeign-consumer
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: nvocc-cloud-example
+        server-addr: 10.10.9.12:8848
+    loadbalancer:
+      ribbon:
+        enabled: false

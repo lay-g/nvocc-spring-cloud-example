@@ -48,11 +48,11 @@
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                    <artifactId>spring-cloud-netflix-ribbon</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-netflix-ribbon</artifactId>
+                    <groupId>io.github.openfeign</groupId>
+                    <artifactId>feign-hystrix</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>

@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: seata-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.10.9.12:8848
+        username: nacos
+        password: nacos
+        namespace: nvocc-cloud-example
+    alibaba:
+      seata:
+        tx-service-group: ${spring.application.name}-service-group
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.0.32/nvocc-cloud-example?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: dubbo
+    password: Dubbo2017
+    hikari:
+      maximum-pool-size: 5
+seata:
+  registry:
+    type: nacos
+    nacos:
+      server-addr: ${spring.cloud.nacos.discovery.server-addr}
+      username: ${spring.cloud.nacos.discovery.username}
+      password: ${spring.cloud.nacos.discovery.password}
+      namespace: ${spring.cloud.nacos.discovery.namespace}
+  application-id: ${spring.application.name}
+  service:
+    vgroup-mapping:
+      seata-provider-service-group: default
